@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct EventProjectM2App: App {
+struct EFREI_TP2_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
