@@ -21,10 +21,9 @@ struct Planning: Codable {
 struct Fields: Codable {
     let activity: String
     let type: String?
-    let start_date: Date
-    let end_date: Date
+    let start_date: String
+    let end_date: String
     let location: String
-    let speaker: String?
     let notes: String
     enum CodingKeys: String, CodingKey {
         case activity = "Activity"
@@ -32,7 +31,6 @@ struct Fields: Codable {
         case start_date = "Start"
         case end_date = "End"
         case location = "Location"
-        case speaker = "Speaker(s)"
         case notes = "Notes"
   }
 }
@@ -65,7 +63,7 @@ protocol RequestFactoryProtocol {
     func getPlanningList(callback: @escaping ((errorType: CustomError?, errorMessage: String?), [Planning]?) -> Void)
 }
 
-private let planningUrlStr = "https://airtable.com/appLxCaCuYWnjaSKB/tblon3PzkaCkPGUnr/viwPg3QwJjoQEsQSQ?blocks=hide"
+private let planningUrlStr = "https://airtable.com/appLxCaCuYWnjaSKB/tblon3PzkaCkPGUnr"
 
 class RequestFactory: RequestFactoryProtocol {
         internal func createRequest(urlStr: String, requestType: RequestType, params: [String]?) -> URLRequest {
